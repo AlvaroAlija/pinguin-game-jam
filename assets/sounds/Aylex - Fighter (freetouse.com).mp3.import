@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bo8xmvap6j40x"
+path="res://.godot/imported/Aylex - Fighter (freetouse.com).mp3-5135cf52b47a393384cc587cebe510f6.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Aylex - Fighter (freetouse.com).mp3"
+dest_files=["res://.godot/imported/Aylex - Fighter (freetouse.com).mp3-5135cf52b47a393384cc587cebe510f6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

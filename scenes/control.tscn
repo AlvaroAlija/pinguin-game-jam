@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://k7t8f2iffl3t"]
+
+[ext_resource type="Script" uid="uid://fkjaxqtjj5j7" path="res://scripts/control.gd" id="1_5p55f"]
+[ext_resource type="FontFile" uid="uid://cw2r0dkfbk2et" path="res://assets/kenney_ui-pack-space-expansion (1)/Font/Kenney Future.ttf" id="1_r67kn"]
+[ext_resource type="AudioStream" uid="uid://bo8xmvap6j40x" path="res://assets/sounds/Aylex - Fighter (freetouse.com).mp3" id="3_brbbq"]
+[ext_resource type="Texture2D" uid="uid://djxpvf68qu6u5" path="res://assets/free-pixel-art-cloud-and-sky-backgrounds/3. NEW CLOUDS/1.png" id="4_8n18e"]
+[ext_resource type="PackedScene" uid="uid://bdnfsjf6ycr6s" path="res://scenes/egg_final_box.tscn" id="5_tjwpk"]
+[ext_resource type="Texture2D" uid="uid://csxrdef2alxbe" path="res://assets/pixilart-sprite 8-Photoroom.png" id="6_lpubu"]
+
+[sub_resource type="Theme" id="Theme_brbbq"]
+default_font = ExtResource("1_r67kn")
+
+[node name="laderboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_brbbq")
+script = ExtResource("1_5p55f")
+
+[node name="ScoreList" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 157.0
+offset_right = 192.0
+offset_bottom = 197.0
+
+[node name="Label" type="Label" parent="ScoreList"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 34.0
+offset_right = 251.0
+offset_bottom = 57.0
+scale = Vector2(3, 3)
+text = "YOUR LEADERBOARD:"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1063.0
+offset_top = 598.0
+offset_right = 1125.0
+offset_bottom = 624.0
+text = "BACK"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_brbbq")
+autoplay = true
+attenuation = 1e-05
+parameters/looping = true
+
+[node name="1" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(553, 327)
+scale = Vector2(2.36451, 2.41751)
+texture = ExtResource("4_8n18e")
+
+[node name="egg_final_box" parent="." instance=ExtResource("5_tjwpk")]
+position = Vector2(933, 388)
+scale = Vector2(0.75, 0.75)
+
+[node name="Pixilart-sprite8-photoroom" type="Sprite2D" parent="."]
+position = Vector2(658, 292)
+rotation = 0.238126
+scale = Vector2(2, 2)
+texture = ExtResource("6_lpubu")
+region_enabled = true
+region_rect = Rect2(389, 0, 55, 64)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 5
+position = Vector2(424, -91)
+amount = 120
+lifetime = 1.2
+preprocess = 5.86
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(700, 1)
+gravity = Vector2(500, 1200)
+angular_velocity_max = 58.18
+scale_amount_min = 0.0
+scale_amount_max = 6.05
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

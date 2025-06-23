@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1aie2l51753i"]
+
+[ext_resource type="Texture2D" uid="uid://dl6kg0m7dskba" path="res://icon.svg" id="1_7q58r"]
+[ext_resource type="Script" uid="uid://b1vvyjp6kyqr6" path="res://scripts/egg_box_10_kg.gd" id="1_xayqy"]
+[ext_resource type="Texture2D" uid="uid://pmkbvbvtfktl" path="res://assets/pixilart-sprite (7).png" id="3_evmrl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xayqy"]
+size = Vector2(175.5, 166)
+
+[node name="egg_box_10kg" type="Area2D"]
+script = ExtResource("1_xayqy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.25, 0)
+scale = Vector2(0.849413, 0.88)
+shape = SubResource("RectangleShape2D_xayqy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.849413, 0.88)
+texture = ExtResource("1_7q58r")
+
+[node name="Pixilart-sprite(7)" type="Sprite2D" parent="."]
+position = Vector2(-2.99997, -79)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("3_evmrl")
+hframes = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

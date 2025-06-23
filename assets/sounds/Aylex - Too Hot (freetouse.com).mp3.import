@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwtc8qt6rg21d"
+path="res://.godot/imported/Aylex - Too Hot (freetouse.com).mp3-6ff42ce190ce2fc1153a1599483ea2f0.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Aylex - Too Hot (freetouse.com).mp3"
+dest_files=["res://.godot/imported/Aylex - Too Hot (freetouse.com).mp3-6ff42ce190ce2fc1153a1599483ea2f0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

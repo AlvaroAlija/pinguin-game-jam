@@ -1,0 +1,131 @@
+[gd_scene load_steps=10 format=3 uid="uid://bqtxxooyflsbw"]
+
+[ext_resource type="Script" uid="uid://c8wqhjpmijbxx" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://cw2r0dkfbk2et" path="res://assets/kenney_ui-pack-space-expansion (1)/Font/Kenney Future.ttf" id="1_oa1go"]
+[ext_resource type="Texture2D" uid="uid://csslubsmbvtfc" path="res://assets/free-pixel-art-cloud-and-sky-backgrounds/1. NEW CLOUDS/1.png" id="2_oa1go"]
+[ext_resource type="Texture2D" uid="uid://b8kmprjanfx3o" path="res://assets/free-pixel-art-cloud-and-sky-backgrounds/1. NEW CLOUDS/3.png" id="3_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://ccg0gdh8ukrkp" path="res://assets/free-pixel-art-cloud-and-sky-backgrounds/1. NEW CLOUDS/2.png" id="4_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://coo777suw6ahw" path="res://assets/free-pixel-art-cloud-and-sky-backgrounds/3. NEW CLOUDS/2.png" id="5_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://cs3l2naofxakj" path="res://assets/free-pixel-art-cloud-and-sky-backgrounds/3. NEW CLOUDS/5.png" id="6_lgwnu"]
+[ext_resource type="AudioStream" uid="uid://dnx53016nmfdd" path="res://assets/sounds/menu-53679.mp3" id="8_tbmy8"]
+
+[sub_resource type="Theme" id="Theme_tbmy8"]
+default_font = ExtResource("1_oa1go")
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_tbmy8")
+script = ExtResource("1_l6cm7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -1.0
+offset_right = 54.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(53.8333, 58.1111)
+
+[node name="PLAY" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "PLAY"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="lore" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "LORE/
+TUTORIAL"
+
+[node name="1" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(573, 323.5)
+scale = Vector2(2.00347, 2.08951)
+texture = ExtResource("2_oa1go")
+
+[node name="3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(571, 314)
+scale = Vector2(2.14583, 2.11728)
+texture = ExtResource("3_tbmy8")
+
+[node name="2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(518, 306)
+scale = Vector2(2.26736, 2.19753)
+texture = ExtResource("4_jk1qb")
+
+[node name="4" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(903, 148)
+texture = ExtResource("5_5dd4i")
+
+[node name="5" type="Sprite2D" parent="."]
+position = Vector2(148, 179)
+texture = ExtResource("6_lgwnu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_tbmy8")
+autoplay = true
+attenuation = 1e-05
+parameters/looping = true
+
+[node name="LADERB" type="Button" parent="."]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 537.0
+offset_right = 672.0
+offset_bottom = 581.0
+text = "YOUR
+LEADERBOARD"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 5
+position = Vector2(365, -89)
+amount = 120
+lifetime = 1.2
+preprocess = 5.86
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(700, 1)
+gravity = Vector2(500, 1200)
+angular_velocity_max = 58.18
+scale_amount_min = 0.0
+scale_amount_max = 6.05
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 21.0
+offset_right = 426.0
+offset_bottom = 39.0
+scale = Vector2(4, 4)
+text = "WEIGHT VS TIME"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 98.0
+offset_right = 581.0
+offset_bottom = 116.0
+scale = Vector2(2, 2)
+text = "Save the Eggs!"
+
+[connection signal="pressed" from="VBoxContainer/PLAY" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/lore" to="." method="_on_lore_pressed"]
+[connection signal="pressed" from="LADERB" to="." method="_on_laderb_pressed"]
