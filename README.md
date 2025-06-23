@@ -24,8 +24,8 @@ Balancing time management and strategic decisions is essential to success.
 
 ## Controls
 
-- Left Arrow Key: Move Left
-- Right Arrow Key: Move Right
-- Pick Up Key: Collect eggs from boxes (exact key depends on setup)
+- A: Move Left
+- D: Move Right
+- E: Collect eggs from boxes (exact key depends on setup)
 - Deliver eggs to the sled and repeat until time runs out.
 
